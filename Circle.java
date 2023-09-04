@@ -86,3 +86,48 @@ public class Circle extends GeometricObject implements Comparable<Circle> {
         }
     }
 }
+
+
+UML:
++-------------------+           +---------------------+
+|   GeometricObject |           |     Comparable      |
++-------------------+           +---------------------+
+| -color: String    |           | compareTo(o: T): int |
+| -filled: boolean  |           +---------------------+
+| +GeometricObject()|               /            \
+| +GeometricObject( |              /              \
+|   color: String,  |           +-------+        +-------+
+|   filled: boolean)|           | Circle|        |Object |
+| +getColor(): Strin|           +-------+        +-------+
+| +setColor(color: S|
+| +isFilled(): boole|
+| +setFilled(filled: |
+|   boolean): void   |
+| +getArea(): double |
+| +getPerimeter(): do|
++-------------------+
+        ^
+        |
+        |
+        |
+        |
+        v
+     +-------+
+     | Circle|
+     +-------+
+     | -radius: double|
+     +-----------------+
+     | +Circle()       |
+     | +Circle(radius: |
+     |   double)       |
+     | +getRadius(): do|
+     | +setRadius(radiu|
+     |   s: double): vo|
+     | +getArea(): doubl|
+     | +getPerimeter(): |
+     |   double         |
+     | +compareTo(o: Ci|
+     |   rcle): int    |
+     | +equals(obj: Obje|
+     |   ct): boolean  |
+     +-------------------+
